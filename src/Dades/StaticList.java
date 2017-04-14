@@ -1,5 +1,6 @@
 package Dades;
 
+import java.util.Iterator;
 import Exceptions.*;
 
 public class StaticList<E extends CustomItem<E>> implements TADGenericList<E> {
@@ -74,6 +75,27 @@ public class StaticList<E extends CustomItem<E>> implements TADGenericList<E> {
   @Override
   public int size() {
     return size;
+  }
+
+  private class ListIterator implements Iterator<E> {
+    private int index;
+
+    private ListIterator() {
+      index = 0;
+    }
+
+    public boolean hasNext() {
+      return index < size;
+    }
+
+    public E next() {
+      return list[index++];
+    }
+  }
+
+  @Override
+  public Iterator<E> iterator() {
+    return new ListIterator();
   }
 
   @Override

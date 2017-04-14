@@ -1,5 +1,6 @@
 package Dades;
 
+import java.util.Iterator;
 import Exceptions.*;
 
 public class DynamicList<E extends CustomItem<E>> implements TADGenericList<E> {
@@ -77,6 +78,32 @@ public class DynamicList<E extends CustomItem<E>> implements TADGenericList<E> {
   @Override
   public int size() {
     return size;
+  }
+
+  private class ListIterator implements Iterator<E> {
+    private Node<E> current;
+    private int index;
+
+    private ListIterator() {
+      current = head;
+      index = 0;
+    }
+
+    public boolean hasNext() {
+      return index < size;
+    }
+
+    public E next() {
+      E aux = current.getItem();
+      current = current.getNext();
+      index++;
+      return aux;
+    }
+  }
+
+  @Override
+  public Iterator<E> iterator() {
+    return new ListIterator();
   }
 
   @Override

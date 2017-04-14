@@ -32,9 +32,9 @@ public interface TADGenericList<E> extends Iterable<E> {
   int indexOf(E e);
 
   /**
-   *
-   * @param e
-   * @return
+   * Retorna si l'element esta present en la llista.
+   * @param e element a buscar.
+   * @return si l'element esta present en la llista.
    */
   boolean contains(E e);
 
