@@ -108,12 +108,11 @@ public class StaticList<E extends CustomItem<E>> implements TADGenericList<E> {
   @Override
   public String toString() {
     if (isEmpty()) return "[]";
-
-    StringBuilder sb = new StringBuilder(size * 10).append("[");
+    StringBuilder sb = new StringBuilder(size * 10).append('[');
     for (int i = 0; i < size - 1; i++) {
-      sb.append(list[i].toString()).append(", ");
+      sb.append(list[i].toString()).append(',').append(' ');
     }
-    sb.append(list[size-1].toString());
-    return sb.append("]").toString();
+    sb.append(list[size-1].toString()).append(']');
+    return sb.toString();
   }
 }

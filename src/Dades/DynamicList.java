@@ -120,14 +120,13 @@ public class DynamicList<E extends CustomItem<E>> implements TADGenericList<E> {
   @Override
   public String toString() {
     if (isEmpty()) return "[]";
-
-    StringBuilder sb = new StringBuilder(size * 10).append("[");
+    StringBuilder sb = new StringBuilder(size * 10).append('[');
     Node<E> aux = head;
     while (aux.getNext() != null) {
-      sb.append(aux.getItem().toString()).append(", ");
+      sb.append(aux.getItem().toString()).append(',').append(' ');
       aux = aux.getNext();
     }
-    sb.append(aux.getItem().toString());
-    return sb.append("]").toString();
+    sb.append(aux.getItem().toString()).append(']');
+    return sb.toString();
   }
 }
