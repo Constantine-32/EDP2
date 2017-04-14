@@ -1,8 +1,6 @@
 package Dades;
 
 import java.util.Iterator;
-import java.util.LinkedList;
-
 import Exceptions.*;
 
 public class DynamicList<E extends CustomItem<E>> implements TADGenericList<E> {
