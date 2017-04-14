@@ -1,6 +1,6 @@
 package Dades;
 
-public class Node<E extends CustomItem<E>> {
+public class Node<E extends Comparable<E>> {
   private E item;
   private Node<E> next;
 

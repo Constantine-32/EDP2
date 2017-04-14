@@ -3,13 +3,13 @@ package Dades;
 import java.util.Iterator;
 import Exceptions.*;
 
-public class StaticList<E extends CustomItem<E>> implements TADGenericList<E> {
+public class StaticList<E extends Comparable<E>> implements TADGenericList<E> {
   private E[] list;
   private int size;
 
   @SuppressWarnings("unchecked")
   public StaticList(int dim) {
-    list = (E[]) new CustomItem[dim];
+    list = (E[]) new Comparable[dim];
     size = 0;
   }
 
@@ -58,7 +58,7 @@ public class StaticList<E extends CustomItem<E>> implements TADGenericList<E> {
   @Override
   public int indexOf(E e) {
     int index = 0;
-    while (index < size && !list[index].isEqual(e)) {
+    while (index < size && !list[index].equals(e)) {
       index++;
     }
     return index < size ? index : -1;

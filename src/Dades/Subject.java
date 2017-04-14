@@ -1,6 +1,6 @@
 package Dades;
 
-public class Subject implements CustomItem<Subject> {
+public class Subject implements Comparable<Subject>, Cloneable {
   private int code;
   private String name;
   private int credit;
@@ -26,7 +26,17 @@ public class Subject implements CustomItem<Subject> {
   }
 
   @Override
-  public boolean isEqual(Subject o) {
-    return code == o.code;
+  public boolean equals(Object o) {
+    return o instanceof Subject && code == ((Subject) o).code;
+  }
+
+  @Override
+  public Object clone() throws CloneNotSupportedException {
+    return super.clone();
+  }
+
+  @Override
+  public String toString() {
+    return name;
   }
 }

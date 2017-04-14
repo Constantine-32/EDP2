@@ -3,7 +3,7 @@ package Dades;
 import java.util.Iterator;
 import Exceptions.*;
 
-public class DynamicList<E extends CustomItem<E>> implements TADGenericList<E> {
+public class DynamicList<E extends Comparable<E>> implements TADGenericList<E> {
   private Node<E> head;
   private int size;
 
@@ -37,7 +37,7 @@ public class DynamicList<E extends CustomItem<E>> implements TADGenericList<E> {
     if (!contains(e)) return false;
 
     Node<E> aux = head;
-    while (aux.getNext() != null && !aux.getNext().getItem().isEqual(e)) {
+    while (aux.getNext() != null && !aux.getNext().getItem().equals(e)) {
       aux = aux.getNext();
     }
     if (aux.getNext() != null) {
@@ -62,7 +62,7 @@ public class DynamicList<E extends CustomItem<E>> implements TADGenericList<E> {
   public int indexOf(E e) {
     int index = 0;
     Node<E> aux = head;
-    while (aux != null && !aux.getItem().isEqual(e)) {
+    while (aux != null && !aux.getItem().equals(e)) {
       aux = aux.getNext();
       index++;
     }
