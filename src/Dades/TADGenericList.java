@@ -1,0 +1,58 @@
+package Dades;
+
+import Exceptions.*;
+
+/**
+ * Interface per a definir el contenidor/col·leccio Llista generica.
+ * @param <E> el tipus dels elements continguts a la Llista.
+ */
+public interface TADGenericList<E> extends Iterable<E> {
+
+  /**
+   * Afegeix l'element especificat a la Llista.
+   * @param e element a afegir.
+   * @return si l'element s'ha afegit com a resultat d'aquesta crida.
+   * @throws LlistaPlena la Llista esta plena i no es pot afegir l'element.
+   */
+  boolean add(E e) throws LlistaPlena;
+
+  /**
+   * Retorna i elimina l'element de la Llista.
+   * @param e element a eliminar.
+   * @return si l'element s'ha eliminat com a resultat d'aquesta crida.
+   * @throws LlistaBuida la Llista esta buida i no hi ha cap element per a retornar.
+   */
+  boolean remove(E e) throws LlistaBuida;
+
+  /**
+   * Retorna l'index de l'element dins la llista.
+   * @param e element a buscar.
+   * @return l'index de l'element en la llista, -1 si l'element no existeix.
+   */
+  int indexOf(E e);
+
+  /**
+   *
+   * @param e
+   * @return
+   */
+  boolean contains(E e);
+
+  /**
+   * Retorna si la Llista esta buida.
+   * @return cert si la Llista esta buida, fals en cas contrari.
+   */
+  boolean isEmpty();
+
+  /**
+   * Retorna si la Llista esta plena.
+   * @return cert si la Llista esta plena, fals en cas contrari.
+   */
+  boolean isFull();
+
+  /**
+   * Retorna el numero d'elements guardats a la Llista.
+   * @return numero d'elements guardats a la Llista.
+   */
+  int size();
+}
