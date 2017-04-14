@@ -1,6 +1,8 @@
 package Dades;
 
 import java.util.Iterator;
+import java.util.LinkedList;
+
 import Exceptions.*;
 
 public class DynamicList<E extends CustomItem<E>> implements TADGenericList<E> {
@@ -47,6 +49,15 @@ public class DynamicList<E extends CustomItem<E>> implements TADGenericList<E> {
     }
     size--;
     return true;
+  }
+
+  @Override
+  public E get(int index) throws LlistaBuida {
+    Node<E> aux = head;
+    for (int i = 0; i < index; i++) {
+      aux = aux.getNext();
+    }
+    return aux.getItem();
   }
 
   @Override

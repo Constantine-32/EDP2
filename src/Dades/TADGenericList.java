@@ -17,12 +17,20 @@ public interface TADGenericList<E> extends Iterable<E> {
   boolean add(E e) throws LlistaPlena;
 
   /**
-   * Retorna i elimina l'element de la Llista.
+   * Elimina l'element de la Llista.
    * @param e element a eliminar.
    * @return si l'element s'ha eliminat com a resultat d'aquesta crida.
    * @throws LlistaBuida la Llista esta buida i no hi ha cap element per a retornar.
    */
   boolean remove(E e) throws LlistaBuida;
+
+  /**
+   * Retorna l'element de la posicio indicada.
+   * @param index posicio de l'element a retornar.
+   * @return l'element indicat.
+   * @throws LlistaBuida la Llista esta buida i no hi ha cap element per a retornar.
+   */
+  E get(int index) throws LlistaBuida;
 
   /**
    * Retorna l'index de l'element dins la llista.

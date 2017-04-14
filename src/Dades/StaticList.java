@@ -49,6 +49,13 @@ public class StaticList<E extends CustomItem<E>> implements TADGenericList<E> {
   }
 
   @Override
+  public E get(int index) throws LlistaBuida {
+    if (isEmpty()) throw new LlistaBuida();
+    if (index < 0 || index >= size) return null;
+    return list[index];
+  }
+
+  @Override
   public int indexOf(E e) {
     int index = 0;
     while (index < size && !list[index].isEqual(e)) {
