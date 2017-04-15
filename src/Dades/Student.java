@@ -11,6 +11,22 @@ public class Student implements Comparable<Student> {
     firstSubject = null;
   }
 
+  public String getCode() {
+    return code;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public Matricula getFirstSubject() {
+    return firstSubject;
+  }
+
+  public void setFirstSubject(Matricula firstSubject) {
+    this.firstSubject = firstSubject;
+  }
+
   @Override
   public int compareTo(Student o) {
     return name.compareTo(o.name);

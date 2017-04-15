@@ -5,10 +5,10 @@ public class Subject implements Comparable<Subject>, Cloneable {
   private String name;
   private int credit;
   private int course;
-  private int period;
+  private String period;
   private Matricula firstStudent;
 
-  public Subject(int code, String name, int credit, int course, int period) {
+  public Subject(int code, String name, int credit, int course, String period) {
     this.code = code;
     this.name = name;
     this.credit = credit;
@@ -17,10 +17,38 @@ public class Subject implements Comparable<Subject>, Cloneable {
     firstStudent = null;
   }
 
+  public int getCode() {
+    return code;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public int getCredit() {
+    return credit;
+  }
+
+  public int getCourse() {
+    return course;
+  }
+
+  public String getPeriod() {
+    return period;
+  }
+
+  public Matricula getFirstStudent() {
+    return firstStudent;
+  }
+
+  public void setFirstStudent(Matricula firstStudent) {
+    this.firstStudent = firstStudent;
+  }
+
   @Override
   public int compareTo(Subject o) {
     int aux = course - o.course;
-    if (aux == 0) aux = period - o.period;
+    if (aux == 0) aux = period.compareTo(o.period);
     if (aux == 0) aux = name.compareTo(o.name);
     return aux;
   }
