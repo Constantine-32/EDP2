@@ -3,7 +3,7 @@ package Dades;
 import Exceptions.*;
 
 /**
- * Interface per a definir el contenidor/col·leccio Llista generica.
+ * Interface per a definir el contenidor/col·leccio llista generica.
  * @param <E> el tipus dels elements continguts a la Llista.
  */
 public interface TADGenericList<E> extends Iterable<E> {
