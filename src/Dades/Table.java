@@ -36,10 +36,10 @@ public class Table<R extends Comparable<R>, C extends Comparable<C>, E> implemen
   }
 
   public R[] getRow(C c) {
-
+    return null;
   }
 
   public C[] getCol(R c) {
-
+    return null;
   }
 }
