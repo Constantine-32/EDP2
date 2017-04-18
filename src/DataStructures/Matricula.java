@@ -71,12 +71,8 @@ public class Matricula implements TADMultilist<Student, Subject> {
     Student[] aux = new Student[size];
     matricula = subject.getFirstStudent();
     for (int i = 0; i < size; i++) {
-      try {
-        aux[i] = (Student) matricula.student.clone();
-        matricula = matricula.nextStudent;
-      } catch (CloneNotSupportedException e) {
-        System.out.println(e.toString());
-      }
+      aux[i] = matricula.student;
+      matricula = matricula.nextStudent;
     }
     return aux;
   }
