@@ -14,8 +14,8 @@ public class StaticList<E extends Comparable<E>> implements TADGenericList<E> {
   }
 
   @Override
-  public boolean add(E e) throws LlistaPlena {
-    if (isFull()) throw new LlistaPlena();
+  public boolean add(E e) throws FullListException {
+    if (isFull()) throw new FullListException();
     if (contains(e)) return false;
 
     int index = 0;
@@ -38,8 +38,8 @@ public class StaticList<E extends Comparable<E>> implements TADGenericList<E> {
   }
 
   @Override
-  public boolean remove(E e) throws LlistaBuida {
-    if (isEmpty()) throw new LlistaBuida();
+  public boolean remove(E e) throws EmptyListException {
+    if (isEmpty()) throw new EmptyListException();
     if (!contains(e)) return false;
 
     int index = indexOf(e);
@@ -49,8 +49,8 @@ public class StaticList<E extends Comparable<E>> implements TADGenericList<E> {
   }
 
   @Override
-  public E get(int index) throws LlistaBuida {
-    if (isEmpty()) throw new LlistaBuida();
+  public E get(int index) throws EmptyListException {
+    if (isEmpty()) throw new EmptyListException();
     if (index < 0 || index >= size) return null;
     return list[index];
   }

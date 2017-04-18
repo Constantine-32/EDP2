@@ -1,6 +1,6 @@
 package Dades;
 
-public class Matricula {
+public class Matricula implements TADMultilist {
   private Student student;
   private Subject subject;
   private Matricula nextStudent;
@@ -9,8 +9,12 @@ public class Matricula {
   public Matricula(Student student, Subject subject) {
     this.student = student;
     this.subject = subject;
+
+
     nextStudent = null;
     nextSubject = null;
+
+
   }
 
   public void setNextStudent(Matricula nextStudent) {

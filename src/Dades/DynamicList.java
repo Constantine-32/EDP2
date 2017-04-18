@@ -13,7 +13,7 @@ public class DynamicList<E extends Comparable<E>> implements TADGenericList<E> {
   }
 
   @Override
-  public boolean add(E e) throws LlistaPlena {
+  public boolean add(E e) throws FullListException {
     if (contains(e)) return false;
 
     if (isEmpty() || head.getItem().compareTo(e) > 0) {
@@ -32,8 +32,8 @@ public class DynamicList<E extends Comparable<E>> implements TADGenericList<E> {
   }
 
   @Override
-  public boolean remove(E e) throws LlistaBuida {
-    if (isEmpty()) throw new LlistaBuida();
+  public boolean remove(E e) throws EmptyListException {
+    if (isEmpty()) throw new EmptyListException();
     if (!contains(e)) return false;
 
     Node<E> aux = head;
@@ -50,7 +50,7 @@ public class DynamicList<E extends Comparable<E>> implements TADGenericList<E> {
   }
 
   @Override
-  public E get(int index) throws LlistaBuida {
+  public E get(int index) throws EmptyListException {
     Node<E> aux = head;
     for (int i = 0; i < index; i++) {
       aux = aux.getNext();

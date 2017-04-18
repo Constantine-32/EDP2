@@ -12,25 +12,25 @@ public interface TADGenericList<E> extends Iterable<E> {
    * Afegeix l'element especificat a la Llista.
    * @param e element a afegir.
    * @return si l'element s'ha afegit com a resultat d'aquesta crida.
-   * @throws LlistaPlena la Llista esta plena i no es pot afegir l'element.
+   * @throws FullListException la Llista esta plena i no es pot afegir l'element.
    */
-  boolean add(E e) throws LlistaPlena;
+  boolean add(E e) throws FullListException;
 
   /**
    * Elimina l'element de la Llista.
    * @param e element a eliminar.
    * @return si l'element s'ha eliminat com a resultat d'aquesta crida.
-   * @throws LlistaBuida la Llista esta buida i no hi ha cap element per a retornar.
+   * @throws EmptyListException la Llista esta buida i no hi ha cap element per a retornar.
    */
-  boolean remove(E e) throws LlistaBuida;
+  boolean remove(E e) throws EmptyListException;
 
   /**
    * Retorna l'element de la posicio indicada.
    * @param index posicio de l'element a retornar.
    * @return l'element indicat.
-   * @throws LlistaBuida la Llista esta buida i no hi ha cap element per a retornar.
+   * @throws EmptyListException la Llista esta buida i no hi ha cap element per a retornar.
    */
-  E get(int index) throws LlistaBuida;
+  E get(int index) throws EmptyListException;
 
   /**
    * Retorna l'index de l'element dins la llista.

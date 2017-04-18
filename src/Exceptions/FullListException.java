@@ -1,9 +1,9 @@
 package Exceptions;
 
-public class LlistaPlena extends Exception {
+public class FullListException extends Exception {
   private static final long serialVersionUID = 1L;
 
-  public LlistaPlena() {
+  public FullListException() {
     super("ERROR : Llista plena");
   }
 }

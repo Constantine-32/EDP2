@@ -4,6 +4,7 @@ import Dades.*;
 import Exceptions.*;
 
 import java.io.*;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
@@ -37,7 +38,7 @@ public class Main {
           try {
             subjectList.add(subject);
             studentList.add(student);
-          } catch (LlistaPlena e) {
+          } catch (FullListException e) {
             System.out.println(e.toString());
           }
         }
