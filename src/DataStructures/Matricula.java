@@ -16,13 +16,7 @@ public class Matricula implements TADMultilist<Student, Subject> {
   private void linkCol() {
     Matricula firstMatricula = subject.getFirstStudent();
 
-    if (firstMatricula == null) {
-      subject.setFirstStudent(this);
-      nextStudent = null;
-      return;
-    }
-
-    if (firstMatricula.student.compareTo(student) >= 0) {
+    if (firstMatricula == null || firstMatricula.student.compareTo(student) >= 0) {
       subject.setFirstStudent(this);
       nextStudent = firstMatricula;
       return;
@@ -41,13 +35,7 @@ public class Matricula implements TADMultilist<Student, Subject> {
   private void linkRow() {
     Matricula firstMatricula = student.getFirstSubject();
 
-    if (firstMatricula == null) {
-      student.setFirstSubject(this);
-      nextSubject = null;
-      return;
-    }
-
-    if (firstMatricula.subject.compareTo(subject) >= 0) {
+    if (firstMatricula == null || firstMatricula.subject.compareTo(subject) >= 0) {
       student.setFirstSubject(this);
       nextSubject = firstMatricula;
       return;

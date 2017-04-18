@@ -1,5 +1,10 @@
 package DataStructures;
 
+/**
+ * Interface per a definir el TAD Multillista.
+ * @param <R> el tipus d'elements de les files.
+ * @param <C> el tipus d'elements de les columnes.
+ */
 public interface TADMultilist<R, C> {
 
   /**
