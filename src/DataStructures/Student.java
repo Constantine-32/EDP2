@@ -3,7 +3,7 @@ package DataStructures;
 public class Student implements Comparable<Student> {
   private String code;
   private String name;
-  private Relation firstSubject;
+  private Matricula firstSubject;
 
   public Student(String code, String name) {
     this.code = code;
@@ -19,11 +19,11 @@ public class Student implements Comparable<Student> {
     return name;
   }
 
-  public Relation getFirstSubject() {
+  public Matricula getFirstSubject() {
     return firstSubject;
   }
 
-  public void setFirstSubject(Relation firstSubject) {
+  public void setFirstSubject(Matricula firstSubject) {
     this.firstSubject = firstSubject;
   }
 
