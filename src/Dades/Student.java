@@ -3,7 +3,7 @@ package Dades;
 public class Student implements Comparable<Student> {
   private String code;
   private String name;
-  private Matricula firstSubject;
+  private Relation firstSubject;
 
   public Student(String code, String name) {
     this.code = code;
@@ -19,11 +19,11 @@ public class Student implements Comparable<Student> {
     return name;
   }
 
-  public Matricula getFirstSubject() {
+  public Relation getFirstSubject() {
     return firstSubject;
   }
 
-  public void setFirstSubject(Matricula firstSubject) {
+  public void setFirstSubject(Relation firstSubject) {
     this.firstSubject = firstSubject;
   }
 

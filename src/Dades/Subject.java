@@ -6,7 +6,7 @@ public class Subject implements Comparable<Subject>, Cloneable {
   private int credit;
   private int course;
   private String period;
-  private Matricula firstStudent;
+  private Relation firstStudent;
 
   public Subject(int code, String name, int credit, int course, String period) {
     this.code = code;
@@ -37,11 +37,11 @@ public class Subject implements Comparable<Subject>, Cloneable {
     return period;
   }
 
-  public Matricula getFirstStudent() {
+  public Relation getFirstStudent() {
     return firstStudent;
   }
 
-  public void setFirstStudent(Matricula firstStudent) {
+  public void setFirstStudent(Relation firstStudent) {
     this.firstStudent = firstStudent;
   }
 
