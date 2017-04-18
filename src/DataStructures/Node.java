@@ -1,4 +1,4 @@
-package Dades;
+package DataStructures;
 
 public class Node<E extends Comparable<E>> {
   private E item;

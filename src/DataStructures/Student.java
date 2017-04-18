@@ -1,4 +1,4 @@
-package Dades;
+package DataStructures;
 
 public class Student implements Comparable<Student> {
   private String code;

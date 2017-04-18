@@ -1,4 +1,4 @@
-package Dades;
+package DataStructures;
 
 public class Relation implements TADMultilist {
   private Student student;

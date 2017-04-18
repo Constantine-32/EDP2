@@ -1,4 +1,4 @@
-package Dades;
+package DataStructures;
 
 public interface TADMultilist {
 

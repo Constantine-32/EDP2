@@ -1,4 +1,4 @@
-package Dades;
+package DataStructures;
 
 public class Subject implements Comparable<Subject>, Cloneable {
   private int code;
