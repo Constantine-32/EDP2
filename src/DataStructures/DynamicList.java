@@ -127,4 +127,26 @@ public class DynamicList<E extends Comparable<E>> implements TADGenericList<E> {
     sb.append(aux.getItem().toString()).append(']');
     return sb.toString();
   }
+
+  private class Node<O extends Comparable<O>> {
+    private O item;
+    private Node<O> next;
+
+    private Node(O item, Node<O> next) {
+      this.item = item;
+      this.next = next;
+    }
+
+    private O getItem() {
+      return item;
+    }
+
+    private Node<O> getNext() {
+      return next;
+    }
+
+    private void setNext(Node<O> next) {
+      this.next = next;
+    }
+  }
 }
