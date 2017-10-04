@@ -185,12 +185,12 @@ public class Main {
     String line;
     try {
       while ((line = file.readLine()) != null) {
-        if (!line.matches("\\d{8};[A-Z '-\u00b7\ufffd]*;\\d{1,2};\\d;\\dQ;URV_\\d{4};[A-Z ]*")) {
+        if (!line.matches("\\d{8},[A-Z '-\u00b7\ufffd]*,\\d{1,2},\\d,\\dQ,URV_\\d{4},[A-Z ]*")) {
           System.out.println("Error! Linia no valida");
           continue;
         }
 
-        Scanner tokens = new Scanner(line).useDelimiter(";");
+        Scanner tokens = new Scanner(line).useDelimiter(",");
         int subjectCode = Integer.parseInt(tokens.next());
         String subjectName = tokens.next();
         int subjectCredit = Integer.parseInt(tokens.next());
